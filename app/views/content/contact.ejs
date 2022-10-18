@@ -1,0 +1,43 @@
+<div class="container">
+    <h1 style="text-align:center; padding-top: 20px; padding-bottom: 20px;"><%= title%></h1>
+    <div class="card" style="width: 18rem; float:right; margin-left: 10px;">
+        <div class="card-body">
+            <h5 class="card-title">Contact me directly!</h5>
+            <p class="card-text">
+                <a href="mailto:cathyda97@gmail.com" style="text-decoration:none;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope-fill" viewBox="0 0 16 16">
+                    <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558L0 4.697ZM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757Zm3.436-.586L16 11.801V4.697l-5.803 3.546Z"/>
+                    </svg> cathyda97@gmail.com
+                </a>
+            </p>
+        </div>
+    </div>
+    <div>
+    <fieldset>
+        <form method="POST">
+            <div class="row">
+                <div class="col">
+                <label for="firstName">First Name</label>
+                <input type="text" class="form-control" placeholder="First name" id="firstName" name="firstName">
+                </div>
+                <div class="col">
+                <label for="lastName">Last Name</label>
+                <input type="text" class="form-control" placeholder="Last name" id="lastName" name="lastName">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="contactNumber">Contact Number</label>
+                <input type="tel" class="form-control" pattern="\d{3} \{d3} \d{4}" placeholder="xxx xxx xxxx" id="contactNumber" name="contactNumber">
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" placeholder="contact@mail.com" id="email" name="email">
+            </div>
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea class="form-control" placeholder="Message" id="message" name="message" rows="10"></textarea>
+            </div>
+            <button type="submit" class="btn btn-secondary" style="margin-top: 5px; margin-bottom: 40px;" id="submitButton" name="submitButton">Submit</button>
+        </form>
+    </fieldset>
+</div>
