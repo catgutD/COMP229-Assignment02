@@ -15,3 +15,7 @@ export function displayProjectsPage(req, res, next){
 export function displayServicesPage(req, res, next){
     res.render('index.ejs', {title: 'Services', page: 'services'})
 };
+
+export function displayContactPage(req, res, next){
+    res.render('index.ejs', {title: 'Contact', page: 'contact'})
+};

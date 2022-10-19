@@ -8,8 +8,7 @@ const ContactSchema =  new Schema({
     firstName: String,
     lastName: String,
     contactNumber: Number,
-    email: String,
-    message: String
+    email: String
 },
 {
     timestamps: true,

@@ -13,7 +13,8 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 
 //import routes
 import indexRouter from './routes/index.route.server.js';
-import contactRouter from './routes/contact.route.server.js';
+import contactRouter from './routes/contact.route.server.js'
+import contactsListRouter from './routes/contacts-list.route.server.js';
 
 //import mongoose module
 import mongoose from 'mongoose';
@@ -45,5 +46,6 @@ app.use(express.static(path.join(__dirname, '../public')));
 //use routes
 app.use('/', indexRouter);
 app.use('/', contactRouter);
+app.use('/', contactsListRouter);
 
 export default app;
