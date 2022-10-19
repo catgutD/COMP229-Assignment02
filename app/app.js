@@ -15,8 +15,22 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 import indexRouter from './routes/index.route.server.js';
 import contactRouter from './routes/contact.route.server.js';
 
+//import mongoose module
+import mongoose from 'mongoose';
+
+//configuration module
+import { MongoURI, Secret } from '../config/config.js';
+
 //instantiate express application
 const app = express();
+
+//completing DB configuration
+mongoose.connect(MongoURI);
+const db = mongoose.connection;
+
+//listen for conection success or error
+db.on('open', () => console.log("MongoDB Connection Success"));
+db.on('error', () => console.log("MongoDB Connection Failed"))
 
 //set up viewengine ejs
 app.set('views', path.join(__dirname, '/views'));
