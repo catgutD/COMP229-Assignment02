@@ -22,7 +22,7 @@ export function DisplayLoginPage(req, res, next){
 export function DisplayRegisterPage(req, res, next){
     //check if user is logged in or not
     if(!req.user){
-        return res.render('index', {title: 'Register', page: 'register', messages: req.flash('RegisterMessage'), displayName: UserDisplayName(req)});
+        return res.render('index.ejs', {title: 'Register', page: 'register', messages: req.flash('RegisterMessage'), displayName: UserDisplayName(req)});
     }
 
     //send user to private area once user is registered

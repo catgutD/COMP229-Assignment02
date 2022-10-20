@@ -38,7 +38,7 @@ export function ProcessContactsEditPage(req ,res, next){
         email: req.body.email
     });
 
-    contactsModel.updateOne({_id:id}, newContact, (err, Contact) => {
+    contactsModel.updateOne({_id: id}, newContact, (err, Contact) => {
         if(err){
             console.error(err);
             res.end(err);
