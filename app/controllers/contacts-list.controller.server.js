@@ -1,5 +1,4 @@
-//contact.controller.server.js Cathy Da 301177731 Oct 19
-import contacts from '../models/contacts.js';
+//contacts-list.controller.server.js Cathy Da 301177731 Oct 19
 import contactsModel from '../models/contacts.js';
 
 export function DisplayContactsList(req, res, next){
@@ -9,7 +8,7 @@ export function DisplayContactsList(req, res, next){
             res.end(err);
         }
 
-        res.render('index', {title: 'Contacts List', page: 'contacts/list', contacts: contactsCollection});
+        res.render('index.ejs', {title: 'Contacts List', page: 'contacts/list', contacts: contactsCollection});
     })
 }
 
@@ -22,7 +21,7 @@ export function DisplayContactEditPage(req, res, next){
             res.end(err);
         }
 
-        res.render('index', {title: 'Edit Contact', page: 'contacts/edit', contact: contact});
+        res.render('index.ejs', {title: 'Edit Contact', page: 'contacts/edit', contact: contact});
     });
 }
 
