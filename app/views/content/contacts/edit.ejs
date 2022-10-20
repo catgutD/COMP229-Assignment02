@@ -1,48 +1,28 @@
 <div class="container">
-    <h1>Contacts List</h1>
-    <div class="row">
-        <div class="col">
-    
-            <table class="table table-striped table-bordered table-hover">
-                <thead class="table-dark">
-                    <tr>
-                        <th scope="col" class="text-center">#</th>
-                        <th scope="col">Name</th>
-                        <th scope="col">Year</th>
-                        <th scope="col">Director</th>
-                        <th scope="col">Genre</th>
-                        <th scope="col">Runtime</th>
-                        <th></th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody id="movieList">
-                    <!-- Repeatable Rows -->
-                    <% for(let count = 0; count < movies.length; count++) { %>
-                        <tr>
-                            <th scope="row" class="text-center"><%= count + 1 %></th>
-                            <td><%= movies[count].name %></td>
-                            <td><%= movies[count].year %></td>
-                            <td><%= movies[count].director %></td>
-                            <td><%= movies[count].genre %></td>
-                            <td><%= movies[count].runtime %></td>
-                            
-                            <td class="text-center col-1">
-                                <a href="/movie-edit/<%= movies[count]._id %>"
-                                    class="btn btn-primary btn-sm">
-                                    <i class="fas fa-pencil-alt"></i> Edit</a>
-                            </td>
-                            
-                            <td class="text-center col-1">
-                                <a href="/movie-delete/<%= movies[count]._id %>"
-                                    class="btn btn-danger btn-sm">
-                                    <i class="fas fa-trash-alt"></i> Delete</a>
-                            </td>
-                        </tr>
-                    <% } %>
-                </tbody>
-            </table>
-        </div>
-    </div>
+    <h1 style="text-align:center; padding-top: 20px; padding-bottom: 20px;"><%= title%></h1>
+    <fieldset>
+        <form method="POST">
+            <input type="hidden" name="id" value="<%= contact._id %>">
+            <div class="row">
+                <div class="col">
+                <label for="firstName">First Name</label>
+                <input type="text" class="form-control" placeholder="First name" id="firstName" name="firstName" value="<%= contact.firstName %>">
+                </div>
+                <div class="col">
+                <label for="lastName">Last Name</label>
+                <input type="text" class="form-control" placeholder="Last name" id="lastName" name="lastName" value="<%= contact.lastName %>">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="contactNumber">Contact Number</label>
+                <input type="tel" class="form-control" pattern="\d{3} \{d3} \d{4}" placeholder="xxx xxx xxxx" id="contactNumber" name="contactNumber" value="<%= contact.contactNumber %>">
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" placeholder="contact@mail.com" id="email" name="email" value="<%= contact.email %>">
+            </div>
+            <button type="submit" class="btn btn-secondary" style="margin-top: 5px; margin-bottom: 40px;" id="submitButton" name="submitButton">Submit</button>
+            <a href="/contacts-list" class="btn btn-secondary" style="margin-top: 5px; margin-bottom: 40px;"><i class="fas fa-undo"></i> Cancel</a>
+        </form>
+    </fieldset>
 </div>
-

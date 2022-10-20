@@ -16,6 +16,6 @@ const UserSchema = new Schema({
     collection: 'users'
 });
 
-UserSchema.plugin(passportLocalMongoose); //will encryp and run the schema imported from mongoose
+UserSchema.plugin(passportLocalMongoose); //will encrypt and run the schema imported from mongoose
 
 export default mongoose.model('User', UserSchema);
