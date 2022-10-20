@@ -21,8 +21,11 @@
                 <label for="email">Email</label>
                 <input type="email" class="form-control" placeholder="contact@mail.com" id="email" name="email" value="<%= contact.email %>">
             </div>
-            <button type="submit" class="btn btn-info" style="margin-top: 5px; margin-bottom: 40px;" id="submitButton" name="submitButton">Submit</button>
-            <a href="/contacts-list" class="btn btn-secondary" style="margin-top: 5px; margin-bottom: 40px;"><i class="fas fa-undo"></i> Cancel</a>
+            <div class="text-end">
+                <button type="submit" class="btn btn-info" style="margin-top: 5px; margin-bottom: 40px;" id="submitButton" name="submitButton">Submit</button>
+                <a href="/contacts-delete/<%= contact._id %>" style="margin-top: 5px; margin-bottom: 40px;" class="btn btn-danger"><i class="fas fa-trash-alt"></i> Delete</a>
+                <a href="/contacts-list" class="btn btn-secondary" style="margin-top: 5px; margin-bottom: 40px;"><i class="fas fa-undo"></i> Cancel</a>
+            </div>
         </form>
     </fieldset>
 </div>
