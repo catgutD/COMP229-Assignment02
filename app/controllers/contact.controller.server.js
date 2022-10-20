@@ -1,9 +1,10 @@
 //contact.controller.server.js Cathy Da 301177731 Sept 30
 
 import contactModel from '../models/contacts.js'
+import { UserDisplayName } from '../utils/index.js';
 
 export function displayContactPage(req, res, next){
-    res.render('index.ejs', {title: 'Contact', page: 'contact'})
+    res.render('index.ejs', {title: 'Contact', page: 'contact', displayName: UserDisplayName(req)});
 };
 
 export function AddContact(req, res, next){
